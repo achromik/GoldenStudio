@@ -7,8 +7,43 @@ $faded-text-color: #777777
 
 $timeline-color: #f1f1f1
 
+@mixin circle($diameter)
+    width: $diameter
+    height: $diameter
+    border-radius: 50%
+
 .darker-bg
-    background-color: $darker-bg-color      
+    background-color: $darker-bg-color    
+
+section
+    padding-top: 120px
+    padding-bottom: 120px
+    h1
+        font-family: 'Montserrat', sans-serif
+        font-weight: 700
+        font-size: 40px
+        color: $bolded-text-color
+        margin-bottom: 10px
+    h3
+        font-family: 'Noto Serif', serif
+        font-size: 16px
+        color: $faded-text-color
+    h4
+        font-family: 'Montserrat', sans-serif
+        font-size: 18px
+        font-weight: 700
+    h5
+        font-family: 'Montserrat', sans-serif
+        font-size: 16px
+        font-weight: 700
+    h6
+        font-family: 'Roboto Slab', serif;      
+        font-size: 14px
+        font-weight: 400
+    p
+        padding: 10px 12px
+        color: $faded-text-color
+        font-family: 'Roboto Slab', serif;      
 
 .navbar
     padding-top: 20px
@@ -37,11 +72,10 @@ $timeline-color: #f1f1f1
     font-size: 26px
     font-family: 'Lobster Two', cursive;
     font-weight: 700
-    
 
 .jumbotron
     height: 100vh
-    background: url('../src/jumbotron-bg.png') 50% 50%
+    background: url('../src/jumbotron-bg.jpg') 50% 50%
     background-size: cover
     color: white
     font-family: 'Montserrat', sans-serif
@@ -67,37 +101,17 @@ $timeline-color: #f1f1f1
         &:hover
             background-color: darken( $main-color, 15%)
             transform: scale(1.1)
-section
-    padding-top: 120px
-    padding-bottom: 120px
-    h1
-        font-family: 'Montserrat', sans-serif
-        font-weight: 700
-        font-size: 40px
-        color: $bolded-text-color
-    h3
-        font-family: 'Noto Serif', serif
-        font-size: 16px
-        color: $faded-text-color
-    h4
-        font-family: 'Montserrat', sans-serif
-        font-size: 18px
-        font-weight: 700
-    p
-        padding: 10px 12px
-        color: $faded-text-color
-        font-family: 'Roboto Slab', serif;
+
+.service,
+.person
+    margin-top: 40px
+    width: 300px
 
 .services
     min-height: 560px      
-    
-    .service
-        margin-top: 40px
-        width: 300px
+
     .circle
-        height: 68px
-        width: 68px
-        border-radius: 50%
+        @include circle(68px)
         border: 4px solid $main-color
         margin-top: 30px
         margin-bottom: 30px
@@ -107,13 +121,10 @@ section
             left: 50%
             top: 50%
 
-
-
 .projects
     max-width: 975px
     padding: 0
     margin-top: 40px
-
 
 .project
     background-color: white
@@ -149,6 +160,7 @@ section
     ul
         list-style: none    
         margin: 0
+        padding: 0
         // &:after
         //     content: 'Lorem psum dolor'
         //     height: 180px
@@ -169,29 +181,25 @@ section
     //     left: calc(50% - 88px)
     //     position: absolute      
     .circle
+        @include circle(175px)
         left: calc(50% - 86px)
         position: absolute
-        
-        img
-            box-sizing: border-box
-            width: 175px
-            height: 175px
-            border: 6px solid $timeline-color
-            border-radius: 50%
-            transition: transform .4s ease
+        overflow: hidden
+        box-sizing: border-box
+        border: 6px solid $timeline-color
+        transition: transform .4s ease
+        z-index: 2
         &:hover
-            img
-                transform: scale(1.15)
-
+            transform: scale(1.15)
     &.end
         margin-bottom: 0
         .circle
             background-color: $main-color
-            box-sizing: border-box
-            width: 175px
-            height: 175px
-            border: 6px solid $timeline-color
-            border-radius: 50%
+            // box-sizing: border-box
+            // width: 175px
+            // height: 175px
+            // border: 6px solid $timeline-color
+            // border-radius: 50%
             p
                 font-family: 'Montserrat', sans-serif
                 font-size: 18px;
@@ -203,6 +211,93 @@ section
                 transform: translateX(-50%) translateY(-50%)
                 padding: 0
                 font-weight: 700
+    .content
+        position: absolute
+        padding-left: 125px
+        padding-right: 125px
+        width: 50%
+        box-sizing: border-box
+        left: 50%
+        text-align: left
+        p
+            padding: 0
+    &:nth-of-type(odd)
+        .content
+            left: 0
+            text-align: right
+
+.photo    
+    @include circle(220px)
+    border: 6px solid white
+    overflow: hidden
+    background: black
+    margin-top: 30px
+    margin-bottom: 30px
+    img
+        width: 100%
+        height: 100%
+.function
+    color: $faded-text-color
+
+.social-media
+    margin-top: 10px
+
+.fab
+    font-size: 24px
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    position: absolute
+    color: $bolded-text-color
+
+.social
+    @include circle(41px)
+    border: 3px solid $bolded-text-color
+    margin: 0 5px
+    position: relative
+    transition: transform .3s ease-in, color .3s ease-in, border-color .3s ease-in
+    &:hover
+        transform: rotateZ(15deg) scale(1.1)
+        color: $main-color
+        border-color: $main-color
+
+.description
+    max-width: 600px
+    margin-left: 100px
+    margin-right: 100px
+    margin-top: 50px
+    p
+        font-size: 16px
+
+.contact
+    height: 500px
+    background-color: $bolded-text-color
+    background-image: url('../src/world-map.png') 
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: contain
+
+@media (max-width: 991.99px)
+    .about
+        min-width: 100%
+    .timeline
+        &:before
+            left: 150px
+        .circle
+            left: 63px  //150 - 1/2 fi circle 
+            
+    .timeline-item    
+        height: auto    
+        .content
+            left: 150px 
+            width: auto
+            padding-right: 75px
+            position: relative
+            width: calc(100% - 135px)
+        &:nth-of-type(odd)
+            .content
+                left: 150px
+                text-align: left           
 
 @media (max-width: 767.99px)
     nav
@@ -216,7 +311,7 @@ section
   
     .wrapper
         flex-direction: column     
-@media (max-width: 767.99px)
+
     .jumbotron
         h1
             font-size: 50px
@@ -224,4 +319,45 @@ section
             font-size: 26px  
         button
             font-size: 16px
-            padding: 10px 30px                 
+            padding: 10px 30px 
+
+@media (max-width: 575.99px)
+    .timeline
+        &:before
+            left: 60px
+        .circle
+            @include circle(95px)
+            img
+                width: 100%
+        .circle,
+        & img
+            left: 14px  //150 - 1/2 fi circle  
+
+    .timeline-item    
+        height: auto    
+        .content
+            left: 0 
+            width: auto
+            padding-right: 0
+            position: relative
+            width: 100%
+        &:nth-of-type(odd)
+            .content
+                left: 0
+                text-align: left  
+        &.end
+            min-height: 50px
+            .circle
+                overflow: unset
+                &:hover
+                    transform: scale(1)
+                p
+                    color: $bolded-text-color
+                    width: calc(100vw - 175px)
+                    left: 105px
+                    transform: translateY(-50%)
+                    text-align: left!important
+
+.description
+    margin-left: 20px
+    margin-right: 20px                    

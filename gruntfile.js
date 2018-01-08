@@ -115,13 +115,13 @@ module.exports = function(grunt) {
                 },
             },
 
-            imagemin: {
-                files: ['src/*.{png,jpg,jpeg,gif}'],
-                tasks: ['imagemin'],
-                options: {
-                    spawn: true,
-                },               
-            },
+            // imagemin: {
+            //     files: ['src/*.{png,jpg,jpeg,gif}'],
+            //     tasks: ['imagemin'],
+            //     options: {
+            //         spawn: true,
+            //     },               
+            // },
 
             scripts: {
                 files: ['js/**/*.js', '!js/**/*.min.js'],
@@ -176,7 +176,8 @@ module.exports = function(grunt) {
 
 
     // Default task(s).
-    grunt.registerTask('default', ['sass', 'jshint', 'postcss:dist', 'imagemin', 'uglify', 'htmlmin', 'browserSync', 'watch']);
+    grunt.registerTask('default', ['sass', 'jshint', 'postcss:dist', 'uglify', 'htmlmin', 'browserSync', 'watch']);
+    // grunt.registerTask('default', ['sass', 'jshint', 'postcss:dist', 'imagemin', 'uglify', 'htmlmin', 'browserSync', 'watch']);
 
     grunt.registerTask('distro', ['htmlmin']);
 };
