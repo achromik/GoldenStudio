@@ -30,7 +30,8 @@ section {
   section p {
     padding: 10px 12px;
     color: #777777;
-    font-family: 'Roboto Slab', serif; }
+    font-family: 'Roboto Slab', serif;
+    width: 100%; }
 
 .navbar {
   padding-top: 20px;
@@ -118,9 +119,11 @@ section {
 .project {
   background-color: white;
   flex: 0 0 25%;
-  margin: 25px 17px; }
+  margin: 25px 17px;
+  min-width: 291px; }
   .project img {
-    display: block; }
+    display: block;
+    width: auto; }
   .project .details {
     padding: 25px; }
     .project .details p {

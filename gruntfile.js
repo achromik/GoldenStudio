@@ -107,13 +107,13 @@ module.exports = function(grunt) {
                 },
             },
 
-            // css: {
-            //     files: ['css/*.css', '!css/*.min.css'],
-            //     tasks: ['postcss:dist'],
-            //     options: {
-            //         spawn: true,
-            //     },
-            // },
+            css: {
+                files: ['css/*.css', '!css/*.min.css'],
+                tasks: ['postcss:dist'],
+                options: {
+                    spawn: true,
+                },
+            },
 
             // imagemin: {
             //     files: ['src/*.{png,jpg,jpeg,gif}'],
@@ -178,7 +178,7 @@ module.exports = function(grunt) {
 
 
     // Default task(s).
-    grunt.registerTask('dev', ['sass', 'jshint', 'browserSync', 'watch']);
+    grunt.registerTask('dev', ['sass', 'jshint', 'postcss:dist', 'browserSync', 'watch']);
     grunt.registerTask('default', ['sass', 'jshint', 'postcss:dist', 'uglify', 'htmlmin', 'browserSync', 'watch']);
     // grunt.registerTask('default', ['sass', 'jshint', 'postcss:dist', 'imagemin', 'uglify', 'htmlmin', 'browserSync', 'watch']);
 
