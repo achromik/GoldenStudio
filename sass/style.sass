@@ -53,7 +53,8 @@ section
     // border-bottom-left-radius: 35px
     // border-bottom-right-radius: 35px
 .backgrounded
-    background-color: rgba(0,0,0,0.7)
+    background-color: rgba(0,0,0,0.8)
+    box-shadow: 1px 1px 3px rgba(120,120,120,0.5)
     
 .navbar-dark
     .navbar-nav
@@ -91,16 +92,19 @@ section
         font-size: 40px
         margin-bottom: 30px
     button
-        font-size: 18px
-        font-weight: 700
-        padding: 25px 50px 
-        background-color: $main-color   
-        color: white
         margin-top: 40px
-        transition: transform .3s
-        &:hover
-            background-color: darken( $main-color, 15%)
-            transform: scale(1.1)
+
+.btn-yellow
+    font-size: 18px
+    font-weight: 700
+    width: 240px
+    padding: 18px 50px 
+    background-color: $main-color   
+    color: white
+    transition: transform .3s
+    &:hover
+        background-color: darken( $main-color, 15%)
+        transform: scale(1.1)
 
 .service,
 .person
@@ -242,24 +246,48 @@ section
 .social-media
     margin-top: 10px
 
-.fab
-    font-size: 24px
-    left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
-    position: absolute
-    color: $bolded-text-color
+
 
 .social
     @include circle(41px)
     border: 3px solid $bolded-text-color
     margin: 0 5px
     position: relative
-    transition: transform .3s ease-in, color .3s ease-in, border-color .3s ease-in
+    transition:  background .2s ease-in, border .2s ease-in, transform .4s ease 
     &:hover
         transform: rotateZ(15deg) scale(1.1)
-        color: $main-color
-        border-color: $main-color
+        // color: $main-color
+        // border-color: $main-color
+        color: white
+
+.facebook
+    &:hover
+        background-color: #3b5998
+        border-color: #3b5998
+
+.twitter
+    &:hover
+        background-color: #00aced
+        border-color: #00aced
+
+.googleplus  
+    &:hover
+        background-color: #d95232
+        border-color: #d95232
+
+.pinterest     
+    &:hover
+        background-color: #cb2028
+        border-color: #cb2028     
+
+
+.fab
+    font-size: 24px
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    position: absolute
+    color: inherit        
 
 .description
     max-width: 600px
@@ -270,12 +298,57 @@ section
         font-size: 16px
 
 .contact
-    height: 500px
     background-color: $bolded-text-color
     background-image: url('../src/world-map.png') 
     background-repeat: no-repeat
-    background-position: 50% 50%
+    background-position: 45vw 10vh
     background-size: contain
+    .form
+        margin-top: 35px
+    .form-column
+        input,
+        textarea
+            width: 100%
+            border-radius: 5px
+            border: 0
+            padding: 20px
+            font-weight: 700
+            font-family: 'Montserrat', sans-serif
+            font-size: 14px
+            display: block
+            &:focus
+                outline: none
+                box-shadow: 0px 0px 5px $main-color
+
+        input
+            height: 50px
+        textarea
+            height: 210px  
+            resize: none      
+
+
+    .form-group
+        margin: 30px 15px
+footer
+    position: relative
+    height: 90px
+    p
+        font-family: 'Montserrat', sans-serif
+        font-size: 14px
+        color: #555555
+        font-weight: 400
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+    .social-media    
+    .social
+        color: white
+        background: #222222
+        &:hover
+            transform: none
+
+
+
 
 @media (max-width: 991.99px)
     .about
@@ -320,6 +393,17 @@ section
         button
             font-size: 16px
             padding: 10px 30px 
+    .contact
+        background-position: 50% 10vh        
+    footer
+        flex-direction: column-reverse
+        justify-content: space-around
+        height: 135px
+        p
+            position: relative
+            margin: 0 auto
+            top: 0
+            
 
 @media (max-width: 575.99px)
     .timeline
@@ -358,6 +442,10 @@ section
                     transform: translateY(-50%)
                     text-align: left!important
 
-.description
-    margin-left: 20px
-    margin-right: 20px                    
+    .description
+        margin-left: 20px
+        margin-right: 20px       
+
+    .form
+        .wrapper
+            flex: wrap             

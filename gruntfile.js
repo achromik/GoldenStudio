@@ -107,13 +107,13 @@ module.exports = function(grunt) {
                 },
             },
 
-            css: {
-                files: ['css/*.css', '!css/*.min.css'],
-                tasks: ['postcss:dist'],
-                options: {
-                    spawn: true,
-                },
-            },
+            // css: {
+            //     files: ['css/*.css', '!css/*.min.css'],
+            //     tasks: ['postcss:dist'],
+            //     options: {
+            //         spawn: true,
+            //     },
+            // },
 
             // imagemin: {
             //     files: ['src/*.{png,jpg,jpeg,gif}'],
@@ -125,7 +125,8 @@ module.exports = function(grunt) {
 
             scripts: {
                 files: ['js/**/*.js', '!js/**/*.min.js'],
-                tasks: ['uglify', 'jshint'],
+                // tasks: ['uglify', 'jshint'],
+                tasks: ['jshint'],
                 options: {
                     spawn: true,
                 },
@@ -145,7 +146,8 @@ module.exports = function(grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : ['css/*.css','*.html','*.css', 'js/*.min.js']
+                    // src : ['css/*.css','*.html','*.css', 'js/*.min.js']
+                    src : ['css/*.css','*.html','*.css', 'js/*.js']
                 },
                 options: {
                     spawn: false,
@@ -176,6 +178,7 @@ module.exports = function(grunt) {
 
 
     // Default task(s).
+    grunt.registerTask('dev', ['sass', 'jshint', 'browserSync', 'watch']);
     grunt.registerTask('default', ['sass', 'jshint', 'postcss:dist', 'uglify', 'htmlmin', 'browserSync', 'watch']);
     // grunt.registerTask('default', ['sass', 'jshint', 'postcss:dist', 'imagemin', 'uglify', 'htmlmin', 'browserSync', 'watch']);
 
