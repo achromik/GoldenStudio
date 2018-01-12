@@ -198,7 +198,6 @@ section {
   border-radius: 50%;
   border: 6px solid white;
   overflow: hidden;
-  background: black;
   margin-top: 30px;
   margin-bottom: 30px; }
   .photo img {
@@ -254,6 +253,19 @@ section {
   margin-top: 50px; }
   .description p {
     font-size: 16px; }
+
+.logos {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
+.logo {
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding: 20px;
+  height: auto; }
 
 .contact {
   background-color: #222222;

@@ -50,8 +50,7 @@ section
     padding-left: 70px
     padding-right: 70px
     transition: background-color .5s
-    // border-bottom-left-radius: 35px
-    // border-bottom-right-radius: 35px
+
 .backgrounded
     background-color: rgba(0,0,0,0.8)
     box-shadow: 1px 1px 3px rgba(120,120,120,0.5)
@@ -132,14 +131,11 @@ section
 
 .project
     background-color: white
-    // &:not(:first-of-type)
-    //     margin-left: 34px
     flex: 0 0 25%
     margin: 25px 17px
     
     img
         display: block
-    // flex: 0 0 30%
     .details
         padding: 25px
         p
@@ -165,25 +161,11 @@ section
         list-style: none    
         margin: 0
         padding: 0
-        // &:after
-        //     content: 'Lorem psum dolor'
-        //     height: 180px
-        //     width: 180px
-        //     border-radius: 50%
-        //     background: $main-color 
-        //     left: calc(50% - 88px)
-        //     position: absolute   
+ 
 .timeline-item
     min-height: 175px
     margin-bottom: 100px
-    // &:before
-    //     content: ''
-    //     height: 180px
-    //     width: 180px
-    //     border-radius: 50%
-    //     background: $main-color
-    //     left: calc(50% - 88px)
-    //     position: absolute      
+    
     .circle
         @include circle(175px)
         left: calc(50% - 86px)
@@ -199,11 +181,6 @@ section
         margin-bottom: 0
         .circle
             background-color: $main-color
-            // box-sizing: border-box
-            // width: 175px
-            // height: 175px
-            // border: 6px solid $timeline-color
-            // border-radius: 50%
             p
                 font-family: 'Montserrat', sans-serif
                 font-size: 18px;
@@ -234,7 +211,6 @@ section
     @include circle(220px)
     border: 6px solid white
     overflow: hidden
-    background: black
     margin-top: 30px
     margin-bottom: 30px
     img
@@ -246,8 +222,6 @@ section
 .social-media
     margin-top: 10px
 
-
-
 .social
     @include circle(41px)
     border: 3px solid $bolded-text-color
@@ -256,8 +230,6 @@ section
     transition:  background .2s ease-in, border .2s ease-in, transform .4s ease 
     &:hover
         transform: rotateZ(15deg) scale(1.1)
-        // color: $main-color
-        // border-color: $main-color
         color: white
 
 .facebook
@@ -296,6 +268,19 @@ section
     margin-top: 50px
     p
         font-size: 16px
+
+.logos
+    padding-top: 60px
+    padding-bottom: 60px
+
+.logo
+    height: 42px
+    display: flex
+    justify-content: center
+    align-content: center
+    flex-direction: column
+    padding: 20px 
+    height: auto       
 
 .contact
     background-color: $bolded-text-color
@@ -357,7 +342,7 @@ footer
         &:before
             left: 150px
         .circle
-            left: 63px  //150 - 1/2 fi circle 
+            left: 63px  
             
     .timeline-item    
         height: auto    
@@ -415,7 +400,7 @@ footer
                 width: 100%
         .circle,
         & img
-            left: 14px  //150 - 1/2 fi circle  
+            left: 14px  
 
     .timeline-item    
         height: auto    
