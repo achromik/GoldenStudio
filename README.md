@@ -4,13 +4,13 @@
 
 [Source in JPEG](http://achromik.com/sources/GoldenStudio.jpg)
 
-[Live version](http://achromik.com/Golden/)
+[Live version](http://aleksanderchromik.pl/GoldenStudio/)
 
 
 #### TODO 
-(state for 07.01.2018)
+(state for 12.01.2018)
 
 - [ ] add section with logos
-- [ ] add section CONTACT US
-- [ ] add footer
+- [x] add section CONTACT US
+- [x] add footer
 - [ ] add some JS scrips for portfolio, menu 
